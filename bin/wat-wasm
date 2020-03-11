@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+watwasm = require('../src/watwasm').watwasm;
+watwasm(process.argv)

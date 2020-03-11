@@ -1,0 +1,41 @@
+{
+  "name": "wat-wasm",
+  "version": "1.0.3",
+  "description": "WebAssembly Text to binary WASM module tools.  This tool provides a CLI built on top of WebAssembly Binary Toolkit and binaryen.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "watwasm": "bin/wat-wasm",
+    "wat-wasm": "bin/wat-wasm",
+    "wat2wasm": "bin/wat-wasm",
+    "wasm2wat": "bin/wat-wasm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/battlelinegames/wat-wasm.git"
+  },
+  "keywords": [
+    "WebAssembly",
+    "WebAssembly Text",
+    "WASM",
+    "WAT",
+    "Binaryen",
+    "WABT",
+    "WebAssembly Binary Toolkit",
+    "Binaryen.js",
+    "wabt.js"
+  ],
+  "author": "Rick Battagline <rick@battagline.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/battlelinegames/wat-wasm/issues"
+  },
+  "homepage": "https://embed.com/wasm/wat-wasm.html",
+  "dependencies": {
+    "binaryen": "^91.0.0",
+    "chalk": "^3.0.0",
+    "wabt": "^1.0.12"
+  }
+}
