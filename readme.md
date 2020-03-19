@@ -27,10 +27,24 @@ wat-wasm is a tool for converting WebAssembly Text to binary WebAssembly.  It in
     Creates a watfile.wat WebAssembly Text file.
     The -o flag allows you to specify an output file.
 
+    wat2wasm file.wat
+    wat2wasm does the same thing as watwasm, but
+    the input file must be WAT
+
+    wasm2wat file.wasm
+    wasm2wat does the same thing as watwasm, but
+    the input file must be WASM
+
 ## Flags:
-    -nd --no-debug-names Do not include debug names in WAT
-    -ie --inline-exports Write imports inline
     -o is followed by an output file name
+
+    -O1 minimal performance optmization
+    -O2 moderate performance optmization
+    -O3 maximum performance optmization
+
+    -Os minimal size optmization
+    -Oz maximum size optmization
+
 
 ### For help please contact:
     Rick Battagline
