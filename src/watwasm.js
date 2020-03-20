@@ -35,6 +35,12 @@ function max_mem_check(wat_string) {
   const mem_regex = /(?:\(memory.*?)((?:\d|_)+)/;
   let match_arr = wat_string.match(mem_regex);
 
+  if (match_arr == null) {
+    console.log("no memory");
+    return false;
+  }
+  console.log("memory found");
+
   if (match_arr.length > 1) {
     let num_str = match_arr[1];
     num_str = num_str.replace('_', '');
@@ -105,12 +111,12 @@ function watwasm(args) {
   if (wat_in === true) {
     let wat_string = bytes.toString();
     wat_string = strip_comments(wat_string);
+
     if (max_mem_check(wat_string)) {
       return;
     }
 
     console.log(wat_string);
-    return;
 
     let $global_i = 0;
     wat_string = wat_string

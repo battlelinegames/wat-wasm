@@ -1,6 +1,6 @@
 {
   "name": "wat-wasm",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "WebAssembly Text to binary WASM module tools.  This tool provides a CLI built on top of WebAssembly Binary Toolkit and binaryen.js.",
   "main": "index.js",
   "scripts": {
