@@ -17,6 +17,7 @@ function log_support() {
   Contact Rick Battagline
   Twitter: @battagline
   https://embed.com/wasm
+  v1.0.26
   `));
 
 }
@@ -80,7 +81,7 @@ function watwasm(args) {
     }
     else if (file.endsWith('.wat')) {
       out_file = file.replace('.wat', '.wasm');
-      console.log(`outfile=${out_file}`);
+      //console.log(`outfile=${out_file}`);
       wat_in = true;
     }
     else {
@@ -105,7 +106,7 @@ function watwasm(args) {
         return;
       }
 
-      console.log(wat_string.substring(0, 1_000) + '...');
+      //console.log(wat_string.substring(0, 1_000) + '...');
 
       let $global_i = 0;
       wat_string = wat_string
@@ -114,12 +115,12 @@ function watwasm(args) {
         .replace(/global\.get/g, 'get_global')
         .replace(/local\.set/g, 'set_local')
         .replace(/global\.set/g, 'set_global');
-
+      /*
       console.log(`
       ===============================================================    
       `);
-
-      console.log(wat_string.substring(0, 1_000) + '...');
+      */
+      //console.log(wat_string.substring(0, 1_000) + '...');
       wabt_options = {
         exceptions: false,
         mutable_globals: false,

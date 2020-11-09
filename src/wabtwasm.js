@@ -24,14 +24,14 @@ function wabtwasm(args) {
   const usage_name = process.argv[1];
 
   let out_file = file.replace('.wat', '.wasm');
-  console.log(`outfile=${out_file}`);
+  //console.log(`outfile=${out_file}`);
   wat_in = true;
 
   var bytes = fs.readFileSync(file);
 
   let wat_string = bytes.toString();
 
-  console.log(wat_string);
+  //console.log(wat_string);
 
   wat_string = wat_string
     .replace(/\(\;.*?\;\)/, '')

@@ -22,12 +22,12 @@ if (args.length <= 2) {
     Flags:
     ${chalk.yellow('-o')} is followed by an output file name
 
-    ${ chalk.yellow('-O1')} minimal performance optmization
-    ${ chalk.yellow('-O2')} moderate performance optmization
-    ${ chalk.yellow('-O3')} maximum performance optmization
+    ${chalk.yellow('-O1')} minimal performance optmization
+    ${chalk.yellow('-O2')} moderate performance optmization
+    ${chalk.yellow('-O3')} maximum performance optmization
 
-    ${ chalk.yellow('-Os')} minimal size optmization
-    ${ chalk.yellow('-Oz')} maximum size optmization
+    ${chalk.yellow('-Os')} minimal size optmization
+    ${chalk.yellow('-Oz')} maximum size optmization
     `);
 
 }
