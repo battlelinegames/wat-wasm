@@ -2,7 +2,7 @@
 
 const chalk = require('chalk');
 const args = process.argv;
-({ wasm2wat, log_error, log_support } = require('../src/watwasm'));
+({ watwasm, log_error, log_support } = require('../src/watwasm'));
 
 if (args.length <= 2) {
   console.log(`
@@ -38,6 +38,21 @@ if (file.endsWith('.wat')) {
   return;
 }
 
-wasm2wat(process.argv)
+let output_flag_set = false;
+args.forEach((item, index) => {
+  if (item.startsWith("-O")) {
+    output_flag_set = true;
+    return;
+  }
+});
+
+if (output_flag_set === false) {
+  args.push('-o');
+  let out_file = file.replace('.wasm', '.wat');
+  args.push(out_file);
+}
+
+
+watwasm(process.argv)
 
 log_support();

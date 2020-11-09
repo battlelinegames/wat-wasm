@@ -24,6 +24,19 @@ if (args.length <= 2) {
     ${chalk.yellow('-Os')} minimal size optmization
     ${chalk.yellow('-Oz')} maximum size optmization
 
+    ${chalk.yellow('--exceptions')} exception handling (proposal)
+    ${chalk.yellow('--mutable-globals')} import/export mutable globals (proposal)
+    ${chalk.yellow('--sat-float-to-int')} non-trapping float-to-int conversion (proposal)
+    ${chalk.yellow('--sign-extension')} sign-extension operators (proposal)
+    ${chalk.yellow('--sign-extension')} sign-extension operators (proposal)
+    ${chalk.yellow('--simd')} single instruction multiple data (proposal)
+    ${chalk.yellow('--threads')} threads (proposal)
+    ${chalk.yellow('--multi-value')} functions may return more than one value (proposal)
+    ${chalk.yellow('--tail-call')} tail call optimization (proposal)
+    ${chalk.yellow('--bulk-memory')} bulk memory copy and memory move (proposal)
+    ${chalk.yellow('--reference-types')} improved interoperablility with host env (proposal)
+    ${chalk.yellow('--annotations')} custom annotations (proposal)
+    ${chalk.yellow('--gc')} garbage collection (proposal)
     `);
   return;
 }

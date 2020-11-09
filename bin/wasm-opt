@@ -1,0 +1,82 @@
+#!/usr/bin/env node
+
+const chalk = require('chalk');
+const args = process.argv;
+({ watwasm, log_error, log_support } = require('../src/watwasm'));
+
+if (args.length <= 2) {
+  console.log(`
+  Usage:
+  ${chalk.yellow('wasm-opt file.wasm -O3')}
+  Optimizes file.wasm
+
+  ${chalk.yellow('wasm-opt file.wasm -O3 -o other.wasm')}
+  Creates other.wasm as an optimized version of file.wasm.
+    The -o flag allows you to specify an output file.
+    I have used the -O3 flag, but any of the optimization flags may be passed in.
+
+  Flags:
+  ${chalk.yellow('-o')} is followed by an output file name);
+
+  Optmization flags all begin with -O where O is a capital letter 'O' and not zero '0'.
+
+  Optimization flags:
+  ${chalk.yellow('-O3')} is the maximum performance focused optimization flag.  
+  It has the longest compile time.
+
+  ${chalk.yellow('-O2')} is the medium performance focused optimization flag.
+  It compiles faster than -O3, but does not perform as many optimizations.
+  
+  ${chalk.yellow('-O1')} is the minimum performance focused optimization flag.
+  It compiles the fastest, but performs minimal optimizations.
+  
+  ${chalk.yellow('-Os')} performs file size focused optimizations.
+  
+  ${chalk.yellow('-Oz')} performs maximumm file size focused optimizations. 
+  It takes longer to run than -Os.
+
+
+  `);
+
+  return;
+}
+
+console.log(`
+========================================================
+  WASM-OPT
+========================================================
+  `);
+
+let file = args[2];
+if (file.endsWith('.wat')) {
+  log_error('wasm-opt passed WAT file!!!');
+  console.log(`
+      USAGE:
+      wasm-opt file.wasm
+      `);
+  return;
+}
+
+let optimization_flag_set = false;
+args.forEach((item, index) => {
+  if (item.startsWith("-O")) {
+    optimization_flag_set = true;
+    return;
+  }
+});
+
+if (optimization_flag_set === false) {
+  console.log(`
+  =================================================
+  ${chalk.red(
+    '           NO OPTIMIZATINO FLAG IS SET')}
+    =================================================
+    
+    A default optimization flag of -O3 has been used.
+    `)
+  args.push('-O3');
+}
+
+watwasm(process.argv)
+
+log_support();

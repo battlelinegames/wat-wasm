@@ -1,0 +1,5 @@
+npm link
+
+or
+
+npm install /absolute/path/wat-wasm
