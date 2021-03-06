@@ -53,5 +53,4 @@ Question?  Contact me on twitter: @battagline
     rick@battagline.com
     Twitter: @battagline
     
-[Rick's WebAssembly Playground](https://embed.com/wasm/) |
-[WebAssembly Game Development Book](http://wasmbook.com)
+[WebAssembly Book](http://wasmbook.com)
