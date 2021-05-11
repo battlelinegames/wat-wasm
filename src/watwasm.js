@@ -16,8 +16,8 @@ function log_support() {
   Need help?  
   Contact Rick Battagline
   Twitter: @battagline
-  https://embed.com/wasm
-  v1.0.26
+  https://wasmbook.com
+  v1.0.29
   `.gray);
 
 }
