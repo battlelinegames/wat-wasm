@@ -1,6 +1,6 @@
 {
   "name": "wat-wasm",
-  "version": "1.0.27",
+  "version": "1.0.28",
   "description": "WebAssembly Text to binary WASM module tools.  It includes a version of wat2wasm that has optimization flag.  It also has a version of wasm2wat to convert from WASM binary back to WAT.  This tool provides a CLI built on top of WebAssembly Binary Toolkit and binaryen.js.",
   "main": "index.js",
   "scripts": {
