@@ -3,7 +3,7 @@
 const chalk = require('chalk');
 const args = process.argv;
 
-({ wasm2wat, log_error, log_support } = require('../src/watwasm'));
+({ watwasm, wasm2wat, log_error, log_support } = require('../src/watwasm'));
 
 if (args.length <= 2) {
   console.log(`
