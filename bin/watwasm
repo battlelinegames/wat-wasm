@@ -1,0 +1,42 @@
+#!/usr/bin/env node
+
+const chalk = require('chalk');
+const args = process.argv;
+
+({ wasm2wat, log_error, log_support } = require('../src/watwasm'));
+
+if (args.length <= 2) {
+  console.log(`
+    Usage:
+    ${chalk.yellow('watwasm (file.wat|file.wasm)')}
+    Creates file.wasm given a WebAssembly Text file
+
+    or
+
+    Creates file.wat given a WASM binary file
+    
+    ${chalk.yellow('watwasm file.wat -o other.wasm')}
+    Creates other.wasm WebAssembly file from file.wat.
+      The -o flag allows you to specify an output file.
+  
+    Flags:
+    ${chalk.yellow('-o')} is followed by an output file name
+
+    ${chalk.yellow('-O1')} minimal performance optmization
+    ${chalk.yellow('-O2')} moderate performance optmization
+    ${chalk.yellow('-O3')} maximum performance optmization
+
+    ${chalk.yellow('-Os')} minimal size optmization
+    ${chalk.yellow('-Oz')} maximum size optmization
+    `);
+
+}
+console.log(`
+========================================================
+  WAT-WASM
+========================================================
+  `);
+
+watwasm(process.argv)
+
+log_support();
