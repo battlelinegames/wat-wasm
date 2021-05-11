@@ -15,7 +15,7 @@ function log_support() {
   Contact Rick Battagline
   Twitter: @battagline
   https://wasmbook.com
-  v1.0.32
+  v1.0.33
   `);
 
 }
@@ -74,10 +74,10 @@ function watwasm(args) {
     let out_file;
     let wat_in = false;
 
-    if (file.endsWith('.wasm')) {
+    if (file != null && file.endsWith('.wasm')) {
       out_file = file;
     }
-    else if (file.endsWith('.wat')) {
+    else if (file != null && file.endsWith('.wat')) {
       out_file = file.replace('.wat', '.wasm');
       //console.log(`outfile=${out_file}`);
       wat_in = true;
