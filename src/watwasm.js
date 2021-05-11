@@ -1,24 +1,22 @@
 const { IfId } = require('binaryen');
 
 function log_error(error_string) {
-  const colors = require('colors');
   console.log(`
     ===================================================================================
     ERROR: ${error_string}
     ===================================================================================
-  `.red.bold);
+  `);
 }
 
 function log_support() {
-  const colors = require('colors');
   console.log(
     `
   Need help?  
   Contact Rick Battagline
   Twitter: @battagline
   https://wasmbook.com
-  v1.0.31
-  `.gray);
+  v1.0.32
+  `);
 
 }
 
