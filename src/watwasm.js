@@ -1,22 +1,24 @@
 const { IfId } = require('binaryen');
+const chalk = require('chalk');
 
 function log_error(error_string) {
-  console.log(`
+  console.log(chalk.red(`
     ===================================================================================
     ERROR: ${error_string}
     ===================================================================================
-  `);
+  `));
 }
 
 function log_support() {
   console.log(
-    `
+    chalk.gray(
+      `
   Need help?  
   Contact Rick Battagline
   Twitter: @battagline
   https://wasmbook.com
   v1.0.33
-  `);
+  `));
 
 }
 
