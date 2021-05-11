@@ -31,7 +31,7 @@
     "Binaryen.js",
     "wabt.js"
   ],
-  "author": "Rick Battagline <rick@battagline.com> (embed.com)",
+  "author": "Rick Battagline <rick@battagline.com> (wasmbook.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/battlelinegames/wat-wasm/issues"
