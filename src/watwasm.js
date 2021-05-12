@@ -1,5 +1,6 @@
 const { IfId } = require('binaryen');
 const chalk = require('chalk');
+const fs = require('fs');
 
 function log_error(error_string) {
   console.log(chalk.red(`
@@ -17,7 +18,7 @@ function log_support() {
   Contact Rick Battagline
   Twitter: @battagline
   https://wasmbook.com
-  v1.0.35
+  v1.0.36
   `));
 
 }
@@ -54,6 +55,21 @@ function max_mem_check(wat_string) {
   return false;
 }
 
+function includeFiles(wat_string) {
+  let line;
+  while (line = wat_string.match(/\(#include\s+\"(.*?)\"\)/)) {
+    let file_name = line[0].replace(/\(#include\s+\"(.*?)\"\)/, '$1');
+    console.log(`
+    file_name:${file_name}$
+    `);
+    let file_contents = fs.readFileSync(file_name);
+    wat_string = wat_string.replace(/\(#include\s+\"(.*?)\"\)/, file_contents);
+  }
+
+  return wat_string;
+
+}
+
 function watwasm(args) {
   var glob_map = {};
   var glob_index = 0;
@@ -68,7 +84,6 @@ function watwasm(args) {
   //const wabt = require("wabt")();
   require("wabt")().then(wabt => {
     var binaryen = require("binaryen");
-    const fs = require('fs');
 
     let file = args[2];
     const usage_name = process.argv[1];
@@ -101,6 +116,7 @@ function watwasm(args) {
     if (wat_in === true) {
       let wat_string = bytes.toString();
       wat_string = strip_comments(wat_string);
+      wat_string = includeFiles(wat_string);
 
       if (max_mem_check(wat_string)) {
         return;
