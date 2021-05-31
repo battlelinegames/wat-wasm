@@ -55,8 +55,4 @@ More tutorials on [Wasm Book](https://wasmbook.com)
     rick@battagline.com
     Twitter: @battagline
     
-<<<<<<< HEAD
-[WebAssembly Game Development Book](http://wasmbook.com)
-=======
 [WebAssembly Book](http://wasmbook.com)
->>>>>>> 1fa1e0a51bbe790d7a2bafb0b83c0e8fec62c852
