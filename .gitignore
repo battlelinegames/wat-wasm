@@ -1,2 +1,4 @@
 **/node_modules
 gitrun.sh
+garbage.js
+.npmignore
