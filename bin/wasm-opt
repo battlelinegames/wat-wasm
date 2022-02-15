@@ -69,7 +69,7 @@ if (optimization_flag_set === false) {
   console.log(`
   =================================================
   ${chalk.red(
-    '           NO OPTIMIZATINO FLAG IS SET')}
+    '           NO OPTIMIZATION FLAG IS SET')}
     =================================================
     
     A default optimization flag of -O3 has been used.
