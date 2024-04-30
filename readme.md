@@ -1,5 +1,5 @@
 # wat-wasm
-wat-wasm is a tool for converting WebAssembly Text to optimized binary WebAssembly and back.  It has a version of wat2wasm and wasm2wat included.  You can use wat2wasm with -O optimization flags with wat2wasm, or even direclty on the binary with wat-wasm CLI.  This is built on top of WABT.js and Binaryen.js.
+wat-wasm is a tool for converting WebAssembly Text to optimized binary WebAssembly and back.  It has a version of wat2wasm and wasm2wat included.  You can use wat2wasm with `-O` optimization flags with wat2wasm, or even directly on the binary with wat-wasm CLI.  This is built on top of WABT.js and Binaryen.js.
 
 Question?  Contact me on twitter: @battagline
 
