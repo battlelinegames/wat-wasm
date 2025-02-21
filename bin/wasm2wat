@@ -29,7 +29,7 @@ console.log(`
 
 let file = args[2];
 if (file.endsWith('.wat')) {
-  log_error('wat2wasm passed WASM file!!!');
+  log_error('wasm2wat passed WAT file!!!');
   console.log(`
       USAGE:
 
